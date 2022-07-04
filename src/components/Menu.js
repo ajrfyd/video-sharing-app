@@ -101,7 +101,7 @@ const Menu = ({ darkMode, setDarkMode }) => {
         </Item>
         <Item onClick={() => setDarkMode(!darkMode)}>
           <HiOutlineLightBulb size={18} />
-          { darkMode ? 'Light Mode' : 'Dark Mode' }
+          { darkMode ? 'Light' : 'Dark' }
         </Item>
       </Wrapper>
     </Container>
@@ -142,6 +142,10 @@ const Item = styled.div`
   gap: 20px;
   cursor: pointer;
   padding: 7.5px 0;
+
+  &:hover {
+    background-color: ${({ theme }) => theme.soft};
+  }
 `;
 
 const Hr = styled.hr`
