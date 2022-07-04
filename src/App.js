@@ -3,6 +3,9 @@ import styled, { ThemeProvider } from 'styled-components';
 import Menu from "./components/Menu";
 import Navbar from "./components/Navbar";
 import { darkTheme, lightTheme } from "./utils/Theme";
+import { Routes, Route } from "react-router-dom";
+import Home from "./pages/Home";
+import Video from "./pages/Video";
 
 const App = () => {
   const [darkMode, setDarkMode] = useState(true);
@@ -14,37 +17,14 @@ const App = () => {
         <Main>
           <Navbar />
           <Wrapper>
-            <h1>test</h1>
-            <h1>test</h1>
-            <h1>test</h1>
-            <h1>test</h1>
-            <h1>test</h1>
-            <h1>test</h1>
-            <h1>test</h1>
-            <h1>test</h1>
-            <h1>test</h1>
-            <h1>test</h1>
-            <h1>test</h1>
-            <h1>test</h1>
-            <h1>test</h1>
-            <h1>test</h1>
-            <h1>test</h1>
-            <h1>test</h1>
-            <h1>test</h1>
-            <h1>test</h1>
-            <h1>test</h1>
-            <h1>test</h1>
-            <h1>test</h1>
-            <h1>test</h1>
-            <h1>test</h1>
-            <h1>test</h1>
-            <h1>test</h1>
-            <h1>test</h1>
-            <h1>test</h1>
-            <h1>test</h1>
-            <h1>test</h1>
-            <h1>test</h1>
-            <h1>test</h1>
+            <Routes>
+              <Route path='/'>
+                <Route index element={<Home />}/>
+                <Route path='video'>
+                  <Route path=':id' element={<Video />}/>
+                </Route>
+              </Route>
+            </Routes>
           </Wrapper>
         </Main>
       </Container>
@@ -64,5 +44,5 @@ const Main = styled.div`
 `
 
 const Wrapper = styled.div`
-  
+  padding: 22px 96px;
 `

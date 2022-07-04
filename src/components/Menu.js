@@ -19,16 +19,19 @@ import {
 import { GiNewspaper } from 'react-icons/gi';
 import { FiFlag } from 'react-icons/fi';
 import { HiOutlineLightBulb } from 'react-icons/hi';
+import { Link } from "react-router-dom";
 
 const Menu = ({ darkMode, setDarkMode }) => {
 
   return (
     <Container>
       <Wrapper>
-        <Logo>
-          <Img src={logo} />
-          LeeTube
-        </Logo>
+        <Link to='/' style={{ textDecoration: 'none', color: 'inherit' }}>
+          <Logo>
+            <Img src={logo} />
+            LeeTube
+          </Logo>
+        </Link>
         <Item>
           <AiFillHome size={18} />
           Home
